@@ -15,11 +15,12 @@ def is_url_valid(url):
         (str) -> boolean
 
         This method takes a url as input and returns true if this url is valid.
-        URL is assumed valid only if it begins with https:// or http:// or www. '''
+        URL is assumed valid only if it begins with https:// or http:// or www. in lower case string'''
     
     pattern1 = '^http://'
     pattern2 = '^https://'
     pattern3 = '^www\.'
+    url = url.lower()
     
     if re.search(pattern1, url) or re.search(pattern2, url) or re.search(pattern3, url):
         return True
